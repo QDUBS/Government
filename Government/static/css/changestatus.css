@@ -1,0 +1,60 @@
+body {
+    background-color: #F9F9F9;
+    padding: 0;
+    margin: 0;
+}
+
+/*HEADER*/
+header {
+    background-color: black;
+    width: 100%;
+    display: flex;
+}
+
+header a {
+    color: #CCC;
+    font: 200 20px 'Myriad Pro';
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+header a:hover {
+    color: #CCC;
+    text-decoration: none;
+}
+
+.date_display {
+    color: black;
+    font: 300 20px 'Myriad Pro';
+    text-align: center;
+    padding: 30px;
+}
+
+/*FORM*/
+.form_background {
+    background-color: #CCC;
+    border-radius: 25px;
+    border: 10px solid #CCC;
+    height: 100%;
+    width: 1200px;
+    position: relative;
+    left: 32.5px;
+    margin-bottom: 60px;
+}
+
+form label {
+    color: black;
+    font: 500 16px 'Myriad Pro';
+    text-align: center;
+}
+
+.button {
+    background-color: red;
+    color: white;
+    font: 300 15px 'Myriad Pro';
+    width: 120px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+}

@@ -1,0 +1,93 @@
+body {
+    background-color: #2F000C;
+}
+
+p {
+    color: yellow;
+    font: 300 22px 'Myriad Pro';
+    text-align: center;
+    position: relative;
+    top: 120px;
+}
+
+form label {
+    color: #2F000C;
+    font: 100 16px 'Myriad Pro';
+    position: relative;
+    top: 168px;
+    left: 333px;
+}
+
+.label {
+    color: yellow;
+    font: 100 16px 'Myriad Pro';
+    padding-bottom: 50px;
+    position: relative;
+    top: -83px;
+    right: 255px;
+}
+
+.placeholder {
+    color: red;
+    padding-left: 20px;
+}
+
+#form_input input {
+    background-color: #77001E;
+    color: yellow;
+    font: 400 16px 'Myriad Pro';
+    padding-left: 40px;
+    position: relative;
+    left: 420px;
+    top: 130px;
+    border: none;
+}
+
+#form_input i {
+    background-color: #C03;
+    position: absolute;
+    left: 435px;
+    bottom: -130px;
+    padding: 11px 10px;
+    color: yellow;
+    border-radius: 4px 0 0 4px;
+    border-right 1px solid yellow;
+}
+
+form text {
+    text-align: center;
+}
+
+button {
+    background-color: #77001E;
+    color: yellow;
+    font: 400 16px 'Myriad Pro';
+    width: 196.5px;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    position: relative;
+    top: 160px;
+    left: 435px;
+}
+
+a {
+    background-color: #77001E;
+    color: yellow;
+    font: 400 16px 'Myriad Pro';
+    width: 196.5px;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    position: relative;
+    top: 125px;
+    left: 635px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+a:hover {
+    color: yellow;
+    text-decoration: none;
+}

@@ -1,0 +1,80 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    
+    <link rel="stylesheet" href="{% static 'bootstrap-4.5.1-dist/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap-4.5.1-dist/css/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/userdashboard.css' %}">
+    {% load crispy_forms_tags %}
+</head>
+<body>
+    
+    <header>
+        <img  src="{% static 'images/enugu-state-logo-2.jpeg' %}" class="pictures" alt="image">
+        <a class="logout" href="{% url 'logout' %}">Logout</a>
+    </header>
+
+    <div class="search_interface">
+        <form method="GET" action="{% url 'search' %}">
+            <div class="form_group">
+                <input name="query" type="search" placeholder="Search visitor" class="searchbox"/>
+                <button type="submit" class="search_icon">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>        
+        </form>
+    </div>
+
+    <div class="profile" href="{% url 'allvisitors' %}">
+        <div class="flex">
+            <img src="{{ user.userprofile.image.url }}" width="100" height="100"/>
+
+            <p class="names">{{ user.userprofile.first_name }} <span>{{ user.userprofile.last_name }}</span></p>
+        </div>
+
+        <p class="view">View your profile</p>
+    </div>
+    
+    
+    <div class="content">
+        {% if user.is_authenticated %}
+            <a class="content_box" href="{% url 'registration' %}">            
+                <div class="content_flex">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    <p>Registration</p>
+                </div>
+            </a>
+
+            <a class="content_box" href="{% url 'allvisitors' %}">            
+                <div class="content_flex">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <p>Daily visitors</p>
+                    <div class="count">{{ visitorsCount }}</div>
+                </div>
+            </a>
+
+            <a class="content_box" href="{% url 'status' %}">            
+                <div class="content_flex">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    <p>Checked in visitors</p>
+                    <div class="count2">{{ checkedIn }}</div>
+                </div>
+            </a>
+
+            <a class="content_box" href="{% url 'checkout' %}">            
+                <div class="content_flex">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <p>Checked out visitors</p>
+                    <div class="count3">{{ checkedOut }}</div>
+                </div>
+            </a>
+        {% endif %}
+    </div>
+
+</body>
+</html>

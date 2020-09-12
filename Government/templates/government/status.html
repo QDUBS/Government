@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    
+    <link rel="stylesheet" href="{% static 'bootstrap-4.5.1-dist/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap-4.5.1-dist/css/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pending.css' %}">    
+    {% load crispy_forms_tags %}
+</head>
+<body>
+
+    <header>
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'registration' %}">Registration</a>
+        <a href="{% url 'allvisitors' %}">All visitors</a>
+        
+
+        <div class="search_interface">
+            <form method="GET" action="{% url 'search' %}">
+                <div class="form_group">
+                    <input name="query" type="search" placeholder="Search visitor" class="searchbox"/>
+                    <button type="submit" class="search_icon">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>        
+            </form>
+        </div>
+    </header>
+
+    
+    <p class="caption">Visitors still on visit today</p>
+
+
+    <table style="width: 100%;">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Middlename</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>City/Town</th>
+            <th>State</th>
+            <th>Tag No</th>
+            <th>Purpose of Visit</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Signed In</th>
+            <th>Signed Out</th>
+            <th>Status</th>
+        </tr>
+
+        {% for visitor in visitors %}
+            {% if visitor.status == 'Checked In' %}
+                <tr>
+                    <td>{{ visitor.firstname }}</td>
+                    <td>{{ visitor.lastname }}</td>
+                    <td>{{ visitor.middlename }}</td>
+                    <td>{{ visitor.gender }}</td>
+                    <td>{{ visitor.phone }}</td>
+                    <td>{{ visitor.address }}</td>
+                    <td>{{ visitor.city_town }}</td>
+                    <td>{{ visitor.state }}</td>
+                    <td>{{ visitor.tag_no }}</td>
+                    <td>{{ visitor.purpose_of_visit }}</td>
+                    <td>{{ visitor.location_visited }}</td>
+                    <td>{{ visitor.date_visited }}</td>
+                    <td>{{ visitor.sign_in_time }}</td>
+                    <td>Pending</td>
+                    <td>
+                        {{ visitor.status }}
+                        <a class="change" href="{% url 'editvisitor' visitor.id %}">Change</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>{{ visitor.firstname }}</td>
+                    <td>{{ visitor.lastname }}</td>
+                    <td>{{ visitor.middlename }}</td>
+                    <td>{{ visitor.gender }}</td>
+                    <td>{{ visitor.phone }}</td>
+                    <td>{{ visitor.address }}</td>
+                    <td>{{ visitor.city_town }}</td>
+                    <td>{{ visitor.state }}</td>
+                    <td>{{ visitor.tag_no }}</td>
+                    <td>{{ visitor.purpose_of_visit }}</td>
+                    <td>{{ visitor.location_visited }}</td>
+                    <td>{{ visitor.date_visited }}</td>
+                    <td>{{ visitor.sign_in_time }}</td>
+                    <td>{{ visitor.sign_out_time }}</td>
+                    <td>{{ visitor.status }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>

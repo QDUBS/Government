@@ -1,0 +1,185 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.form_house {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*SUCCESS MESSAGE*/
+.alert {
+    color: #F3F3F3;
+    font: 100 16px 'Myriad Pro';
+    text-align: center;
+    position: relative;
+    top: 20px;
+    left: -20px;
+}
+
+.link {
+    color: blueviolet;
+    font: 100 16px 'Myriad Pro';
+    text-decoration: none;
+}
+
+.link:hover {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+
+/*BACKGROUND IMAGE*/
+.pictures {
+    width: 100%;
+    height: 850px;
+}
+
+
+/*OVERLAY*/
+.overlay {
+    width: 100%;
+	height: 850px;
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+    position: absolute;
+    top: 0;
+}
+
+
+.header {
+    color: yellow;
+    position: absolute;
+    top: 70px;
+    font: 500 30px 'Myriad Pro';
+    padding-left: 512px;
+}
+
+
+/*Form*/
+form {
+    position: absolute;
+    top: 150px;
+    left: 230px;
+}
+
+.profile_pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: relative;
+    top: 20px;
+    left: 350px;
+}
+
+/*Upload button*/
+.upload {
+    width: 800px;
+    height: 35px;
+    background: grey;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.upload input {
+    display: block;
+    width: 800px;
+    height: 35px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.upload_text {
+    color: #F3F3F3;
+    font: 600 18px 'Myriad Pro';
+    text-align: center;
+    position: relative;
+    top: 48px;
+    z-index: 1;
+}
+
+/*Form Properties*/
+form label {
+    color: #F3F3F3;
+    font: 400 18px 'Myriad Pro';
+}
+
+button {
+    background-color: #900;
+    color: white;
+    font: 400 16px 'Myriad Pro';
+    width: 130px;
+    border: none;
+    border-radius: 4px;
+    padding: 9px;
+}
+
+/*Form Row 1*/
+#form-row-1 {
+    display: flex;
+}
+
+#form-row-1 input {
+    width: 250px;
+    height: 30px;
+    background: transparent;
+    color: white;
+    font: 300 16px 'Myriad Pro';
+    border: 2px solid #CCC;
+    border-radius: 5px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+}
+
+/*Form Row 2*/
+#form-row-2 {
+    display: flex;
+}
+
+#form-row-2 input {
+    width: 385px;
+    height: 30px;
+    background: transparent;
+    color: white;
+    font: 300 16px 'Myriad Pro';
+    border: 2px solid #CCC;
+    border-radius: 5px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+}
+
+/*Form Row 3*/
+#form-row-3 {
+    display: flex;
+}
+
+#form-row-3 input {
+    width: 385px;
+    height: 30px;
+    background: transparent;
+    color: white;
+    font: 300 16px 'Myriad Pro';
+    border: 2px solid #CCC;
+    border-radius: 5px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+}
+
+/*Form Row 4*/
+#form-row-4 {
+    display: flex;
+}
+
+#form-row-4 input {
+    width: 385px;
+    height: 30px;
+    background: transparent;
+    color: white;
+    font: 300 16px 'Myriad Pro';
+    border: 2px solid #CCC;
+    border-radius: 5px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,129 @@
+body {
+    background-color: #F9F9F9;
+    padding: 0;
+    margin: 0;
+}
+
+/*HEADER*/
+header {
+    background-color: black;
+    width: 100%;
+    height: 80px;
+    display: flex;
+}
+
+header a {
+    color: #CCC;
+    font: 200 20px 'Myriad Pro';
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+header a:hover {
+    color: #CCC;
+    text-decoration: none;
+}
+
+.form_group {
+    display: flex;
+}
+
+.searchbox {
+    color: #333;
+    font: 400 19px 'Myriad Pro';
+    text-align: left;
+    padding: 10px;
+    width: 550px;
+    height: 50px;
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    position: relative;
+    top: 15px;
+    left: 250px;
+}
+
+.searchbox input {
+    color: #333;
+}
+
+.search_icon {
+    background-color: #CCC;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+    top: 15px;
+    left: 248px;
+}
+
+button i {
+    color: black;
+    font: 100 18px 'Myriad Pro';
+    text-align: center;
+    padding: 3px;
+}
+
+
+/*CAPTION*/
+.caption {
+    color: black;
+    font: bolder 18px 'Myriad Pro';
+    text-align: center;
+    padding: 30px;
+}
+
+
+/*TABLE*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, td {
+    border: 1px solid #999;
+}
+
+th {
+    background-color: #333;
+    color: #FFF;
+    height: 30px;
+    font: 500 14px 'Myriad Pro';
+    text-align: left;
+    padding: 8px;
+    border-right: 1px solid #FFF;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+
+td {
+    height: 10px;
+    font: 100 14px 'Myriad Pro';
+    text-align: left;
+    vertical-align: bottom;
+    padding: 8px;
+}
+
+.change {
+    font: 500 16px 'Myriad Pro';
+    color: red;
+    text-align: center;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.change:hover {
+    color: red;
+    text-decoration: none;
+}
+
+tr {
+    background-color: #F3F3F3;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFF;
+}

@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Visitors' Registration</title>
+    
+    <link rel="stylesheet" href="{% static 'bootstrap-4.5.1-dist/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap-4.5.1-dist/css/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/visitorsregister.css' %}">    
+    {% load crispy_forms_tags %}
+</head>
+<body>
+
+    <header>
+        <img>
+
+        <p><a href="{% url 'dashboard' %}">Dashboard</a></p>
+        <p><a href="{% url 'registration' %}">Registration</a></p>
+        <p><a href="{% url 'status' %}">Pending</a></p>
+    </header>
+    
+    <div class="date_display">
+        <p>VISITORS FOR {{ current_date|date }}</p>
+    </div>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div class="form_background">
+        <form method="post" class="form">
+            {% csrf_token %}
+            
+            <div class="form-row">
+                <div class="form-group col-md-4 mb-0">
+                    {{ form.firstname|as_crispy_field }}
+                </div>
+
+                <div class="form-group col-md-4 mb-0">
+                    {{ form.lastname|as_crispy_field }}
+                </div>
+
+                <div class="form-group col-md-4 mb-0">
+                    {{ form.middlename|as_crispy_field }}
+                </div>
+
+                <div class="form-group col-md-4 mb-0" id="dropdown">
+                    {{ form.gender|as_crispy_field }}
+                </div>
+
+                <div class="form-group col-md-4 mb-0">
+                    {{ form.birth_date|as_crispy_field }}
+                </div>
+
+                <div class="form-group col-md-4 mb-0">
+                    {{ form.phone|as_crispy_field }}
+                </div>
+            </div>
+
+            {{ form.address|as_crispy_field }}
+    
+            <div class="form-row">
+                <div class="form-group col-md-4 mb-0" id="dropdown">
+                    {{ form.state|as_crispy_field }}
+                </div>
+    
+                <div class="form-group col-md-4 mb-0">
+                    {{ form.city_town|as_crispy_field }}
+                </div>
+    
+                <div class="form-group col-md-4 mb-0">
+                    {{ form.tag_no|as_crispy_field }}
+                </div>
+            </div>
+
+            {{ form.purpose_of_visit|as_crispy_field }}
+            
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0" id="dropdown">
+                    {{ form.location_visited|as_crispy_field }}
+                </div>
+    
+                <div class="form-group col-md-6 mb-0" id="dropdown">
+                    {{ form.status|as_crispy_field }}
+                </div>
+            </div>
+            
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+    
+</body>
+</html>

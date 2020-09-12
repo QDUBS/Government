@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create an account</title>
+    
+    <link rel="stylesheet" href="{% static 'bootstrap-4.5.1-dist/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap-4.5.1-dist/css/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+    {% load crispy_forms_tags %}
+</head>
+
+
+<body>
+    
+    <div class="form_house">
+        <div class="image">
+            <img  src="{% static 'images/photo 102.jpg' %}" class="pictures" alt="image">
+        </div>
+
+        <div class="overlay">
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <p class="alert">{{ message }}<span>. Login <a class="link" href="{% url 'login' %}"> here</a></span></p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <p class="header">Create an account</p>
+
+            <form method="POST" class="form-group" action="{% url 'register' %}">
+                {% csrf_token %}
+                
+                {% if form.errors %}
+                    <p>Error submitting form. Try again!</p>
+                {% endif %}
+        
+                <img  src="{% static 'images/default.jpg' %}" class="profile_pic" alt="image">
+
+                <p class="upload_text">Add a photo</p>
+
+                <div class="upload">
+                    {{ profileform.image }}
+                </div>
+
+                <div class="form-row" id="form-row-1">
+                    <div class="form-group col-md-4 mb-0">
+                        {{ profileform.first_name|as_crispy_field }}
+                    </div>
+                    
+                    <div class="form-group col-md-4 mb-0">
+                        {{ profileform.last_name|as_crispy_field }}
+                    </div>
+    
+                    <div class="form-group col-md-4 mb-0">
+                        {{ profileform.middlename|as_crispy_field }}
+                    </div>
+                </div>
+
+                
+                <div class="form-row" id="form-row-2">
+                    <div class="form-group col-md-6 mb-0">
+                        {{ profileform.address|as_crispy_field }}
+                    </div>
+    
+                    <div class="form-group col-md-6 mb-0">
+                        {{ profileform.phone|as_crispy_field }}
+                    </div>
+                </div>
+                
+
+                <div class="form-row" id="form-row-3">
+                    <div class="form-group col-md-6 mb-0">
+                        {{ form.username|as_crispy_field }}
+                    </div>
+    
+                    <div class="form-group col-md-6 mb-0">
+                        {{ form.email|as_crispy_field }}
+                    </div>
+                </div>
+
+
+                <div class="form-row" id="form-row-4">
+                    <div class="form-group col-md-6 mb-0">
+                        {{ form.password1|as_crispy_field }}
+                    </div>
+    
+                    <div class="form-group col-md-6 mb-0">
+                        {{ form.password2|as_crispy_field }}
+                    </div>
+                </div>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        
+</body>
+</html>
