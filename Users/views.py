@@ -65,6 +65,8 @@ def Login(request):
         form = LoginForm(request.POST)
         if form.is_valid():
             form.save()
+
+            return redirect('dashboard')
     else:
         form = LoginForm()
 
